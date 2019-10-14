@@ -1,0 +1,248 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+/* -------------NavBar -------------- */
+#nav-bar
+{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-brand img
+{
+    height: 50px;
+    width: auto;
+    padding-left: 20px;
+}
+
+.navbar-nav li
+{
+    padding: 0 10px;
+}
+
+.navbar-nav li a
+{
+    float: right;
+    text-align: left;
+}
+
+#nav-bar ul li a:hover
+{
+    color: #007bff!important;
+}
+.navbar
+{
+    background: #fff;
+}
+
+.navbar-toggler
+{
+    border: none!important;
+}
+
+.nav-link
+{
+    color: #555!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+/* ------------- SLIDER ------------ */
+#slider 
+{
+    widows: 100;
+}
+
+.carousel-caption
+{
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial!important;
+    text-shadow: 3px 2px black;
+
+}
+
+.carousel-caption h5
+{
+    color: #fff;
+    font-size: 42px;
+}
+
+
+/* --------------ABOUT --------------- */
+#about
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555;
+}
+
+#about .btn 
+{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.about-content 
+{
+    padding-top: 20px;
+}
+
+/* ----------------SERVICES ---------- */
+#services
+{
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(img/services.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #efefef!important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#services h1
+{
+    text-align: center;
+    color: #efefef!important;
+    padding-bottom: 10px;
+}
+
+#services h1::after
+{
+    content: '';
+    background: #007bff;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+.services 
+{
+    margin-top: 40px;
+}
+
+.icon
+{
+    font-size: 40px;
+    margin: 10px auto;
+    padding: 10px;
+    height: 90px;
+    width: 90px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+#services p
+{
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+.services .col-md-4:hover 
+{
+    background: #007bff;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+/* ----------- heading format and underline----------- */
+
+h1 
+{
+    text-align: center;
+    color: #555!important;
+    padding-bottom: 10px;
+}
+
+h1::after
+{
+    content: '';
+    background: #007bff;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+    
+}
+
+/* ----------------- CONTACT US ---------------- */
+#contact 
+{
+    background: #efefef;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #777;
+}
+#contact p 
+{
+    padding-top: 20px;
+}
+
+.contact-form
+{
+    padding: 10px;
+}
+
+.form-control
+{
+    border-radius: 1!important;
+    border: none!important;
+}
+
+::placeholder 
+{
+    color: #999!important;
+}
+
+.follow
+{
+    background: #fff;
+    padding: 10px;
+    margin: 15px;
+}
+
+.contact-info .fa
+{
+    margin: 10px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* -------------- FOOTER ----------*/
+#footer {
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    
+}
+
+#footer {
+    font-style: italic;
+}
+
+/* -------------- NEWS PAGE --------- */
+.text p {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.card h5 
+{
+    text-align: center;
+    color: 	#505050;
+}
+.text p {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #333;
+}
+
+#news 
+{
+    background: #efefef;
+
+}
