@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Medi-App</string>
+    <string name="tab_text_1">Heart</string>
+    <string name="tab_text_2">Diabetes</string>
+    <string name="textview">TextView</string>
+    <string name="firstName" />
+    <!--  <string name="tab_text_3">Cancer</string> -->
+</resources>
