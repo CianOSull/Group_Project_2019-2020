@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Medi-App</string>
+    <!--string name="tab_text_1">Heart</string>
+    <string name="tab_text_2">Diabetes</string-->
+    <string name="textview">TextView</string>
+    <string name="firstName" />
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="PasswordTextView">Password :</string>
+    <string name="PwordEditText">Password</string>
+    <string name="E_MailEditText">E-mail</string>
+    <string name="Register_Button">Register</string>
+    <string name="Login_Button">Login</string>
+    <string name="E_MailTextView">Email :</string>
+    <string name="RegisterTextView">Haven\'t got an account? Register here!</string>
+    <string name="FirstNameEditTextHint">First Name</string>
+    <string name="second_nameEditText">Second Name</string>
+    <string name="phonenumberEditText">PhoneNumber</string>
+    <string name="addressTextView">Address</string>
+    <!--  <string name="tab_text_3">Cancer</string> -->
+</resources>
