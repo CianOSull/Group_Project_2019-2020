@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov  5 22:01:51 2019
+
+@author: cianosullivan
+"""
+
+# example making new class prediction for a classification problem
+from numpy import loadtxt
+from keras.models import Sequential
+from keras.layers import Dense
+from sklearn.datasets.samples_generator import make_blobs
+from sklearn.preprocessing import MinMaxScaler
+from numpy import array
+# generate 2d classification dataset
+
+dataset = loadtxt("pimaIndiansDiabetesDatabase.csv", delimiter=",")
+# split into input (X) and output (Y) variables
+X = dataset[:,0:8]
+Y = dataset[:,8]
+
+#X, y = make_blobs(n_samples=100, centers=2, n_features=2, random_state=1)
+scalar = MinMaxScaler()
+scalar.fit(X)
+X = scalar.transform(X)
+# define and fit the final model
+model = Sequential()
+model.add(Dense(24, input_dim=8, activation='relu'))
+model.add(Dense(12, activation='relu'))
+model.add(Dense(8, activation='relu'))
+model.add(Dense(4, activation='relu'))
+model.add(Dense(1, activation='sigmoid'))
+model.compile(loss='binary_crossentropy', optimizer='adam')
+model.fit(X, Y, epochs=150, verbose=1)
+# new instance where we do not know the answer
+Xnew = array([[8.0, 183.0, 64.0, 0.0, 0.0, 23.3, 0.672, 32.0]])
+# make a prediction
+ynew = model.predict_classes(Xnew)
+# show the inputs and predicted outputs
+print("X=%s, Predicted=%s" % (Xnew[0], ynew[0]))
+
+# Model exporting
+model.save("model.h5")
+print("Saved model to disk")
