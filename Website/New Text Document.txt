@@ -1,0 +1,23 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA9iQqVRDHTyrVX3pj9XcALnfN-YsNk39k",
+    authDomain: "medi-screen.firebaseapp.com",
+    databaseURL: "https://medi-screen.firebaseio.com",
+    projectId: "medi-screen",
+    storageBucket: "medi-screen.appspot.com",
+    messagingSenderId: "546675780751",
+    appId: "1:546675780751:web:7bc3379bc8f4506a1214fa",
+    measurementId: "G-X016BSZTQD"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>

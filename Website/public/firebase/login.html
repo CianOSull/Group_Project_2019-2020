@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Medi-Screen</title>
+        <link rel="icon" href="img/logo1.png">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap-social.css">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+<!--    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<!--    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>-->
+<!--    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+
+        
+    </head>
+    
+    
+    
+    <body>
+    <!-- NAVIGATION--->
+        <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="index.html"><img src ="img/logo1.png" alt="logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">CONTACT US</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+        </section>
+        
+        <!----- ABOUT ---------->
+<div id = "login_div" class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign In</h3>
+<!--
+				<div class="d-flex justify-content-end social_icon">
+                    <a class="btn btn-social-icon btn-facebook">
+                        <span class="fa fa-facebook"></span>
+                    </a>
+                    <a class="btn btn-social-icon btn-twitter">
+                        <span class="fa fa-twitter"></span>
+                    </a>
+                    <a class="btn btn-social-icon btn-google">
+                        <span class="fa fa-google"></span>
+                    </a>
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+-->
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><img src="https://img.icons8.com/ios-filled/20/000000/user.png"></span>
+						</div>
+						<input id = "email_field" type="text" class="form-control" placeholder="email">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><img src="https://img.icons8.com/ios-filled/20/000000/password.png"></span>
+						</div>
+						<input id = "password_field" type="password" class="form-control" placeholder="password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Remember Me
+					</div>
+					<div class="form-group">
+                        <button id="btnLogin" type="button" class="btn float-right btn-primary">Login</button>
+					</div>
+                    <div class="d-flex justify-content-center links">
+					Don't have an account?<a href="firebase/index1.html">Social Media Login</a>
+				</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Don't have an account?<a href="register.html">Sign Up</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="#">Forgot your password?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+        <!-----SERVICES------>
+        <!---- FOOTER ------>
+<!--
+        <section id="footer">
+            <div class="container">
+        <p>Copyright 2019<br>
+        </p>
+            </div>
+        </section>
+-->
+        
+        <!---- End of page --------->
+        <script src="js/smooth-scroll.js"></script>
+        
+        <script>
+	       var scroll = new SmoothScroll('a[href*="#"]');
+        </script>
+        
+        
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+
+        <script src="js/app.js"></script>
+        <!--<script src="js/index.js"></script>-->
+    </body>
+</html>

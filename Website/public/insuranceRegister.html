@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Medi-Screen</title>
+        <link rel="icon" href="img/logo1.png">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/register.css">
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap-social.css">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    </head>
+
+        <!-- *******************************************************************************************
+        * TODO(DEVELOPER): Paste the initialization snippet from:
+        * Firebase Console > Overview > Add Firebase to your web app. *
+        ***************************************************************************************** -->
+        <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+         <!-- firebase -->
+        <script src="https://www.gstatic.com/firebasejs/ui/4.2.0/firebase-ui-auth.js"></script>
+        <!-- firebase -->
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+        <!-- firebaseUI 
+        <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>-->
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyA9iQqVRDHTyrVX3pj9XcALnfN-YsNk39k",
+            authDomain: "medi-screen.firebaseapp.com",
+            databaseURL: "https://medi-screen.firebaseio.com",
+            projectId: "medi-screen",
+            storageBucket: "medi-screen.appspot.com",
+            messagingSenderId: "546675780751",
+            appId: "1:546675780751:web:7bc3379bc8f4506a1214fa",
+            measurementId: "G-X016BSZTQD"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          //firebase.analytics();
+        </script>
+
+    
+    
+    <body>
+    <!-- NAVIGATION--->
+        <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="index.html"><img src ="img/logo1.png" alt="logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">CONTACT US</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+        </section>
+        
+        <!----- ABOUT ---------->
+<div id = "login_div" class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Register You Details</h3>
+			</div>
+			<div class="card-body">
+				<form>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><img src="https://img.icons8.com/ios-filled/20/000000/user.png"></span>
+						</div>
+						<input id = "companyName" type="text" class="form-control" placeholder="Company Name">
+						
+					</div>
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><img src="https://img.icons8.com/ios-filled/20/000000/important-mail.png"></span>
+						</div>
+						<input id = "email" type="text" class="form-control" placeholder="Email">
+					</div>
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><img src="https://img.icons8.com/ios-filled/20/000000/phone.png"></span>
+						</div>
+						<input id = "phoneNumber" type="text" class="form-control" placeholder="Phone number">
+					</div>
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><img src="https://img.icons8.com/ios-filled/20/000000/order-delivered.png"></span>
+						</div>
+						<input id = "address" type="text" class="form-control" placeholder="Address">
+					</div>
+					<div class="form-group">
+                        <button id = "btnRegister" type="button" class="btn float-right btn-primary">Register</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+        <!---- End of page --------->
+        <script src="js/smooth-scroll.js"></script>
+        
+        <script>
+	       var scroll = new SmoothScroll('a[href*="#"]');
+        </script>
+        
+        
+
+        <script src="js/insuranceRegister.js"></script>
+    </body>
+</html>

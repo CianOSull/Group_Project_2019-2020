@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="UTF-8">
+        <title>Medi-Screen</title>
+        <link rel="icon" href="img/logo1.png">
+
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap-social.css">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    </head>
+    <div></div>
+
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+ <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/ui/4.2.0/firebase-ui-auth.js"></script>
+ <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+  <!-- firebaseUI -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA9iQqVRDHTyrVX3pj9XcALnfN-YsNk39k",
+    authDomain: "medi-screen.firebaseapp.com",
+    databaseURL: "https://medi-screen.firebaseio.com",
+    projectId: "medi-screen",
+    storageBucket: "medi-screen.appspot.com",
+    messagingSenderId: "546675780751",
+    appId: "1:546675780751:web:7bc3379bc8f4506a1214fa",
+    measurementId: "G-X016BSZTQD"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //firebase.analytics();
+</script>
+    <!-- *******************************************************************************************
+       * TODO(DEVELOPER): Paste the initialization snippet from:
+       * Firebase Console > Overview > Add Firebase to your web app. *
+       ***************************************************************************************** -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
+    <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+        var rootRef = firebase.database().ref().child("GP");
+        var num = 0;
+        var myVal = 0;
+        rootRef.on("child_added", snap => {
+            //alert(snap.val());
+            var name = snap.child("Name").val();
+            var email = snap.child("Email").val();
+            var gpid = snap.child("GP_id").val();
+            var pid = snap.child("PID").val();
+            if (user) {
+            if (email == user.email) { // see if the email logged in matches an email in the database
+                var role = snap.child("Role").val();
+                if (role == "GP") { // displaying only the buttons that are relavent to that user
+                    localStorage.setItem('gpId', gpid);
+                    num = 1;
+                    myVal = 1;
+                        }
+                
+                else if (role == "Insurance") { // getting only the objects that have id specific to the GP
+                    localStorage.setItem('gpId', gpid); // saving user's gp id to local storage
+                    num = 2;
+                    myVal = 2;
+                        }
+                
+                else if (role == "Admin") { // getting only the objects that have id specific to the GP
+                    localStorage.setItem('gpId', gpid); // saving user's gp id to local storage
+                    num = 3;
+                    myVal = 3;
+                        }
+                
+                    else {
+                        console.log("No user signed in");
+                        }
+                    } // (if user) 
+            }
+            if (num == 1) {
+                window.open ('gp.html','_self',false); // Open the register page.
+
+            }
+            else if (num == 2) {
+                window.open ('insurance.html','_self',false); // Open the register page.
+
+            }
+            else if (num == 3) {
+                window.open ('admin.html','_self',false); // Open the register page.
+
+            }
+            else if (num == 0) { // if user is not in GP database, then check in Insurance providers
+                 var check = 0;
+
+                 var rootRef1 = firebase.database().ref().child("Insurance-Providers");
+                rootRef1.on("child_added", snap => {
+                    //alert(snap.val());
+                    var iName = snap.child("Company_Name").val();
+                    var iEmail = snap.child("Email").val();
+                    var ipid = snap.child("IP_ID").val();
+                    var iAddress = snap.child("Address").val();
+                    
+                    if (iEmail == user.email) { // see if the email logged in matches an email in the database
+                        localStorage.setItem('IP_ID', ipid); // saving user's gp id to local storage
+                        check=1;
+                            } // (if user) 
+                    
+                    if (check == 0) { // If user doesn't exist in insurance database either
+                        if (myVal == 1) {
+                            window.open ('gp.html','_self',false); // Open the register page.
+
+                        }
+                        else if (myVal == 2) {
+                            window.open ('insurance.html','_self',false); // Open the register page.
+
+                        }
+                         else if (myVal == 3) {
+                                window.open ('admin.html','_self',false); // Open the register page.
+
+                         }
+                        else {                        
+                        window.open ('professional.html','_self',false); // Open the register page for insurance.
+
+                        }
+
+                    }
+                    else {
+                        check =1;
+                        window.open ('insurance.html','_self',false); // Open the register page for insurance.
+
+                    }
+
+                    }); // rootRef.on("child_added", snap =>      
+            }//  if (email == user.email)
+            
+            
+            }); // rootRef.on("child_added", snap =>
+            
+      
+    }); //firebase.auth().onAuthStateChanged(function(user)
+        </script>
+    <body>
+  </body>
+</html>
